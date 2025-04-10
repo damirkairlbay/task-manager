@@ -2,26 +2,59 @@ syntax = "proto3";
 
 package taskmanager;
 
+option go_package = "./internal/task;taskmanager";
+
 service TaskService {
-  rpc CreateTask (Task) returns (Task);
-  rpc ListTasks (Empty) returns (TaskList);
-  rpc GetTask (TaskRequest) returns (Task);
-  rpc UpdateTask (Task) returns (Task);
-  rpc DeleteTask (TaskRequest) returns (Empty);
+  rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+  rpc ListTasks(ListTasksRequest) returns (ListTasksResponse);
+  rpc GetTask(GetTaskRequest) returns (GetTaskResponse);
+  rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse);
+  rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse);
 }
 
-message Task {
-  int64 id = 1;
-  string title = 2;
-  string status = 3;
+message CreateTaskRequest {
+  string title = 1;
+  string description = 2;
 }
 
-message TaskRequest {
-  int64 id = 1;
+message CreateTaskResponse {
+  string message = 1;
 }
 
-message TaskList {
+message ListTasksRequest {}
+
+message ListTasksResponse {
   repeated Task tasks = 1;
 }
 
-message Empty {}
+message GetTaskRequest {
+  int32 id = 1;
+}
+
+message GetTaskResponse {
+  Task task = 1;
+}
+
+message UpdateTaskRequest {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+}
+
+message UpdateTaskResponse {
+  string message = 1;
+}
+
+message DeleteTaskRequest {
+  int32 id = 1;
+}
+
+message DeleteTaskResponse {
+  string message = 1;
+}
+
+message Task {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+}
