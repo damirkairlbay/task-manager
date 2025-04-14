@@ -129,6 +129,35 @@ The service implements error handling:
 - Detailed error messages
 - Appropriate gRPC status codes
 
+## Postman
+
+CreateTask
+
+![CreateTask_1](https://github.com/user-attachments/assets/cb200b16-d014-4b5c-9e92-892608e0a571)
+
+![CreateTask_2](https://github.com/user-attachments/assets/b406d4f3-a2b3-4e26-a3a2-9487579b1a2a)
+
+ListTasks
+
+![ListTasks](https://github.com/user-attachments/assets/0e7ab74e-5ac3-4047-a7d6-8ef21c5f13d8)
+
+GetTask
+
+![GetTask](https://github.com/user-attachments/assets/f85a9cac-8910-475e-bf0a-4b33201f196f)
+
+UpdateTask
+
+![UpdateTask](https://github.com/user-attachments/assets/988ea8d2-e8db-42cf-b597-30839b62948f)
+
+DeleteTask
+
+![DeleteTask](https://github.com/user-attachments/assets/1dc8cbe1-ce7f-4237-9c8e-5cfd585f14f0)
+
+ListTasks After DeleteTask
+
+![ListTasks2](https://github.com/user-attachments/assets/7d7003f0-2daf-4246-bc1a-35344cd90248)
+
+
 ## License
 
 MIT
